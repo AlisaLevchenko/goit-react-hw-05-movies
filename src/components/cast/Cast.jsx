@@ -25,7 +25,7 @@ export default function Cast() {
               <img
                 src={
                   el.profile_path
-                    ? `https://image.tmdb.org/t/p/w200/${el.profile_path}`
+                    ? `https://image.tmdb.org/t/p/w500/${el.profile_path}`
                     : placeholder
                 }
                 alt={`${el.name}`}

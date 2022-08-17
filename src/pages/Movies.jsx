@@ -17,15 +17,20 @@ export default function Movies() {
   };
 
   useEffect(() => {
+    console.log(query);
     const serchQuery = serchParams.get('query');
-    if (serchQuery === '') return;
+
+    if (!serchQuery) {
+      return;
+    }
     // setLoading(true);
     getSearchMovies(serchQuery)
       .then(res => {
-        console.log(res);
+        // console.log(res);
         if (res.length === 0) {
           setMovies([]);
           alert("We don't have any movie with that name");
+          return;
         }
         setMovies(res);
       })
